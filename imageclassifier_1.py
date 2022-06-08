@@ -13,6 +13,7 @@ cv2.namedWindow("Capture")
 res = 0
 while True:
     ret, frame = capture.read()
+    print(frame.shape)
     cv2.rectangle(frame, (460, 300), (660, 0), (0, 0, 0), 2) #手が入る領域の指定
     frame = cv2.putText(frame, 'Put hand here', (390, 325), cv2.FONT_HERSHEY_SIMPLEX, fontScale= 1, color = (0, 0, 0), thickness = 2)
     frame = cv2.putText(frame, 'And press ESC', (390, 350), cv2.FONT_HERSHEY_SIMPLEX, fontScale= 1, color = (0, 0, 0), thickness = 2)
