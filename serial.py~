@@ -1,0 +1,12 @@
+import serial
+loop = 0
+ser = serial.Serial(port = '/dev/ttyUSB0', baudrate = 9600)
+while ser.is_open:
+    print(">> " + ser.readline()), # add camma to print without newline
+    if loop == 10:
+        ser.writelines(["10\n"]);
+    elif loop == 50:
+        ser.writelines(["500\n"]);
+    elif loop == 70:
+        break
+    loop = loop + 1
